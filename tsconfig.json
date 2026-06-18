@@ -1,0 +1,9 @@
+{
+  "buildOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "script": true,
+    "esModuleInterop": true
+  }
+}
