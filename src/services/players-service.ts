@@ -49,8 +49,12 @@ export const createPlayerService = async (player: PlayerModel) => {
 export const deletePlayerService = async (id: number) => {
   //implementar a função de deletar
   let response = null;  
-  await deleteOnePlayer(id);
-  response = await HttpResponse.ok({message: "Player deleted successfully"});
+  const isDeleted = await deleteOnePlayer(id);
+  if(isDeleted){
+    response = await HttpResponse.ok({message: "Player deleted successfully"});
+  }else{
+    response = await HttpResponse.badRequest();
+  }
   return response;
 }
 
